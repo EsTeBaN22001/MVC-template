@@ -3,17 +3,35 @@
 /** Media Queries **/
 @mixin phone {
 	@media (max-width: v.$phone) {
-		@content;
+			@content;
 	}
 }
 @mixin tablet {
 	@media (max-width: v.$tablet) {
-		@content;
+			@content;
 	}
 }
 @mixin desktop {
 	@media (max-width: v.$desktop) {
-		@content;
+			@content;
+	}
+}
+
+@mixin breakpointDesktop {
+	@media (max-width: v.$breakpointDesktop) {
+			@content;
+	}
+}
+
+@mixin breakpointPhone {
+	@media (max-width: v.$breakpointPhone) {
+			@content;
+	}
+}
+
+@mixin breakpointSmartWatch {
+	@media (max-width: v.$breakpointSmartWatch) {
+			@content;
 	}
 }
 
