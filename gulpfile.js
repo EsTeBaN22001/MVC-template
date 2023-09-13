@@ -5,9 +5,7 @@ const postcss    = require('gulp-postcss')
 const sourcemaps = require('gulp-sourcemaps')
 const cssnano = require('cssnano');
 const terser = require('gulp-terser-js');
-const squoosh = require('gulp-libsquoosh');
 const notify = require('gulp-notify');
-const cache = require('gulp-cache');
 const webp = require('gulp-webp');
 
 const paths = {
@@ -36,7 +34,6 @@ function javascript() {
 
 function img() {
 	return src(paths.img)
-		.pipe(cache(squoosh()))
 		.pipe( webp() )
 		.pipe(dest('public/build/img'))
 		.pipe(notify({ message: 'Imagen Completada'}));
@@ -50,4 +47,4 @@ function watchArchives() {
 
 exports.css = css;
 exports.watch = watchArchives;
-exports.default = parallel(css, javascript,  img,  watchArchivos ); 
+exports.default = parallel(css, javascript,  img,  watchArchives ); 
